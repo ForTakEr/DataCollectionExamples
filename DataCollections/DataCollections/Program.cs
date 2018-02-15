@@ -183,47 +183,87 @@ namespace DataCollections
 
 
             #region Queue
-            Queue<string> numbers = new Queue<string>();
-            numbers.Enqueue("One");
-            numbers.Enqueue("Two");
-            numbers.Enqueue("Three");
-            numbers.Enqueue("Four");
-            numbers.Enqueue("Five");
+            //Queue<string> numbers = new Queue<string>();
+            //numbers.Enqueue("One");
+            //numbers.Enqueue("Two");
+            //numbers.Enqueue("Three");
+            //numbers.Enqueue("Four");
+            //numbers.Enqueue("Five");
 
-            foreach (string number in numbers)
+            //foreach (string number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //Console.WriteLine();
+
+            //Console.WriteLine("Dequeuing '{0}'", numbers.Dequeue());
+
+            //Console.WriteLine("Peek at the next item to dequeue: {0}", numbers.Peek());
+
+            //Console.WriteLine("Dequeing '{0}'\n", numbers.Dequeue());
+
+            //Queue<string> queueCopy = new Queue<string>(numbers.ToArray());
+            //Console.WriteLine("Contents of the first copy:");
+            //foreach (string number in queueCopy)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //string[] array2 = new string[numbers.Count * 2];
+            //numbers.CopyTo(array2, numbers.Count);
+
+            //Queue<string> queueCopy2 = new Queue<string>(array2);
+            //Console.WriteLine("\nContents of the second Copy, with duplicates and nulls");
+            //foreach (string number in queueCopy2)
+            //{
+            //    Console.WriteLine(number);
+            //}
+            //Console.WriteLine("\nQueueCopy contains 'Four' = {0}", queueCopy.Contains("Four"));
+            //queueCopy.Clear();
+            //Console.WriteLine("\nqueueCopy count is: {0}", queueCopy.Count);
+
+
+
+
+            #endregion
+
+            #region Stack
+
+            //Stack<string> numbers = new Stack<string>();
+            //numbers.Push("One");
+            //numbers.Push("Two");
+            //numbers.Push("Three");
+            //numbers.Push("Four");
+            //numbers.Push("Five");
+
+            //foreach (string number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //Console.WriteLine("\nPopping '{0}'", numbers.Pop());
+            //Console.WriteLine("Peek at the next item to destack: {0}", numbers.Peek());
+            //Console.WriteLine("Popping '{0}'", numbers.Pop());
+
+
+
+
+            #endregion
+
+            #region Query
+            int[] numbers = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
+
+            var numQuery = from num in numbers
+                           where (num % 2) == 0
+                           select num;
+            int evenNumCount = numQuery.Count();
+
+
+            foreach (int num in numQuery)
             {
-                Console.WriteLine(number);
+                Console.WriteLine("{0,1} ", num);
             }
-
-            Console.WriteLine();
-
-            Console.WriteLine("Dequeuing '{0}'", numbers.Dequeue());
-
-            Console.WriteLine("Peek at the next item to dequeue: {0}", numbers.Peek());
-
-            Console.WriteLine("Dequeing '{0}'\n", numbers.Dequeue());
-
-            Queue<string> queueCopy = new Queue<string>(numbers.ToArray());
-            Console.WriteLine("Contents of the first copy:");
-            foreach (string number in queueCopy)
-            {
-                Console.WriteLine(number);
-            }
-
-            string[] array2 = new string[numbers.Count * 2];
-            numbers.CopyTo(array2, numbers.Count);
-
-            Queue<string> queueCopy2 = new Queue<string>(array2);
-            Console.WriteLine("\nContents of the second Copy, with duplicates and nulls");
-            foreach (string number in queueCopy2)
-            {
-                Console.WriteLine(number);
-            }
-            Console.WriteLine("\nQueueCopy contains 'Four' = {0}", queueCopy.Contains("Four"));
-            queueCopy.Clear();
-            Console.WriteLine("\nqueueCopy count is: {0}", queueCopy.Count);
-            
-
 
 
             #endregion
