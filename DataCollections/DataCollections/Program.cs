@@ -251,22 +251,169 @@ namespace DataCollections
 
             #endregion
 
-            #region Query
-            int[] numbers = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
+            #region LINQ
+            //int[] numbers = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
 
-            var numQuery = from num in numbers
-                           where (num % 2) == 0
-                           select num;
-            int evenNumCount = numQuery.Count();
+            //var numQuery = from num in numbers
+            //               where (num % 2) == 0
+            //               select num;
+            //int evenNumCount = numQuery.Count();
 
 
-            foreach (int num in numQuery)
+            //foreach (int num in numQuery)
+            //{
+            //    Console.WriteLine("{0,1} ", num);
+            //}
+
+            //var humans1 = new List<Human>
+            //{
+            //    new Human(){Name = "Kalle", Age = 21},
+            //    new Human(){Name = "Malle", Age = 40},
+            //    new Human(){Name = "Mari", Age = 28},
+            //    new Human(){Name = "Elmar", Age = 40},
+            //    new Human(){Name = "Juku", Age = 10}
+            //};
+
+            //var query = (from element in humans1
+            //             orderby element.Age ascending
+            //             where element.Age > 20
+            //             select element).ToList();
+
+            //foreach (var item in query)
+            //{
+            //    Console.WriteLine(item.Name + " " + item.Age);
+            //}
+
+
+            //CONTAINS
+            //int[] numbers = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
+            //var a = numbers.Contains(7);
+
+            //var b = false;
+            //foreach (var item in numbers)
+            //{
+            //    if (item == 6)
+            //        b = true;
+            //}
+
+            //Console.WriteLine(a);
+            //Console.WriteLine(b);
+
+            //int[] numbers = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
+
+            //var a = numbers.ElementAtOrDefault(15);
+            //var b = numbers.FirstOrDefault();
+            //var c = numbers.Take(3).ToList();
+            //var d = numbers.Average();
+            //var e = numbers.Max();
+            //var f = numbers.Min();
+
+            //Console.WriteLine("ElementAtOrDefault: " + a);
+            //Console.WriteLine("FirstOrDefault: " + b);
+            //foreach (var item in c)
+            //{
+            //    Console.WriteLine("Take: " + item);
+            //}
+            //Console.WriteLine("Average: " + d);
+            //Console.WriteLine("Max: " + e);
+            //Console.WriteLine("Min: " + f);
+
+
+            //var g = humans1.Where(x => x.Name == "Kalle").FirstOrDefault().Name;
+            //var h = humans1.Where(x => x.Age == 40).ToList();
+            //var i = humans1.Where(x => x.Name.Contains("a")).ToList();
+            //var j = humans1.Where(x => x.Name.StartsWith("M")).ToList();
+
+            //Console.WriteLine(g);
+
+            //foreach (var item in h)
+            //{
+            //    Console.WriteLine(item.Name + " " + item.Age);
+            //}
+
+            //Console.WriteLine("\nContains 'a': ");
+
+            //foreach (var item in i)
+            //{
+            //    Console.WriteLine(item.Name + " " + item.Age);
+            //}
+
+            //Console.WriteLine("\nStarts with 'M': ");
+
+            //foreach (var item in j)
+            //{
+            //    Console.WriteLine(item.Name + " " + item.Age);
+            //}
+            #endregion
+
+            #region Cars
+
+            var Cars1 = new List<Car>
             {
-                Console.WriteLine("{0,1} ", num);
+                new Car(){KW = 100, Tootja = "Opel", Mudel = "Omega", Värv = "Sinine"},
+                new Car(){KW = 55, Tootja = "Moskvich", Mudel = "2140", Värv = "Kollane"},
+                new Car(){KW = 132, Tootja = "BMW", Mudel = "E39 530", Värv = "Must"},
+                new Car(){KW = 70, Tootja = "Ford", Mudel = "Focus", Värv = "Kuldne"},
+                new Car(){KW = 90, Tootja = "Mercedes", Mudel = "C230", Värv = "Valge"},
+                new Car(){KW = 60, Tootja = "Toyota", Mudel = "Auris", Värv = "Lilla"},
+                new Car(){KW = 75, Tootja = "Kia", Mudel = "Carens", Värv = "Punane"},
+                new Car(){KW = 140, Tootja = "Audi", Mudel = "A8", Värv = "Tume sinine"},
+                new Car(){KW = 45, Tootja = "Lada", Mudel = "Riva", Värv = "Roheline"},
+                new Car(){KW = 200, Tootja = "Lamborghini", Mudel = "Aventador", Värv = "Roosa"},
+            };
+
+            Console.WriteLine("KW järjestuses: ");
+
+            var query = (from element in Cars1
+                         orderby element.KW ascending
+                         select element).ToList();
+
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
             }
 
+            var a = Cars1.Where(x => x.Tootja.Contains("o")).ToList();
+            var b = Cars1.Where(x => x.Tootja.Contains("e")).ToList();
+            var c = Cars1.Where(x => x.Mudel.Length > 4).ToList();
+            var d = Cars1.Where(x => x.KW >= 150).ToList();
+            var e = Cars1.Where(x => x.KW <= 50).ToList();
+
+            Console.WriteLine("\n'o' tootja nimes: ");
+            foreach (var item in a)
+            {
+                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            }
+
+            Console.WriteLine("\n'e' tootja nimes: ");
+            foreach (var item in b)
+            {
+                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            }
+
+            Console.WriteLine("\nMudel koosneb rohkem kui 4 tähest: ");
+            foreach (var item in c)
+            {
+                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            }
+
+            Console.WriteLine("\nVõimsaim auto: ");
+            foreach (var item in d)
+            {
+                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            }
+
+            Console.WriteLine("\nNõrgeim auto");
+            foreach (var item in e)
+            {
+                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            }
 
             #endregion
+
+
+
+
 
             Console.ReadLine();
         }
