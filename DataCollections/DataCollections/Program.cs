@@ -403,7 +403,7 @@ namespace DataCollections
                 Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
             }
 
-            Console.WriteLine("\nNõrgeim auto");
+            Console.WriteLine("\nNõrgeim auto: ");
             foreach (var item in e)
             {
                 Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
