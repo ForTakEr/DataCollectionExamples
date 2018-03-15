@@ -348,70 +348,99 @@ namespace DataCollections
 
             #region Cars
 
-            var Cars1 = new List<Car>
-            {
-                new Car(){KW = 100, Tootja = "Opel", Mudel = "Omega", Värv = "Sinine"},
-                new Car(){KW = 55, Tootja = "Moskvich", Mudel = "2140", Värv = "Kollane"},
-                new Car(){KW = 132, Tootja = "BMW", Mudel = "E39 530", Värv = "Must"},
-                new Car(){KW = 70, Tootja = "Ford", Mudel = "Focus", Värv = "Kuldne"},
-                new Car(){KW = 90, Tootja = "Mercedes", Mudel = "C230", Värv = "Valge"},
-                new Car(){KW = 60, Tootja = "Toyota", Mudel = "Auris", Värv = "Lilla"},
-                new Car(){KW = 75, Tootja = "Kia", Mudel = "Carens", Värv = "Punane"},
-                new Car(){KW = 140, Tootja = "Audi", Mudel = "A8", Värv = "Tume sinine"},
-                new Car(){KW = 45, Tootja = "Lada", Mudel = "Riva", Värv = "Roheline"},
-                new Car(){KW = 200, Tootja = "Lamborghini", Mudel = "Aventador", Värv = "Roosa"},
-            };
+            //var Cars1 = new List<Car>
+            //{
+            //    new Car(){KW = 100, Tootja = "Opel", Mudel = "Omega", Värv = "Sinine"},
+            //    new Car(){KW = 55, Tootja = "Moskvich", Mudel = "2140", Värv = "Kollane"},
+            //    new Car(){KW = 132, Tootja = "BMW", Mudel = "E39 530", Värv = "Must"},
+            //    new Car(){KW = 70, Tootja = "Ford", Mudel = "Focus", Värv = "Kuldne"},
+            //    new Car(){KW = 90, Tootja = "Mercedes", Mudel = "C230", Värv = "Valge"},
+            //    new Car(){KW = 60, Tootja = "Toyota", Mudel = "Auris", Värv = "Lilla"},
+            //    new Car(){KW = 75, Tootja = "Kia", Mudel = "Carens", Värv = "Punane"},
+            //    new Car(){KW = 140, Tootja = "Audi", Mudel = "A8", Värv = "Tume sinine"},
+            //    new Car(){KW = 45, Tootja = "Lada", Mudel = "Riva", Värv = "Roheline"},
+            //    new Car(){KW = 200, Tootja = "Lamborghini", Mudel = "Aventador", Värv = "Roosa"},
+            //};
 
-            Console.WriteLine("KW järjestuses: ");
+            //Console.WriteLine("KW järjestuses: ");
 
-            var query = (from element in Cars1
-                         orderby element.KW ascending
-                         select element).ToList();
+            //var query = (from element in Cars1
+            //             orderby element.KW ascending
+            //             select element).ToList();
 
-            foreach (var item in query)
-            {
-                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
-            }
+            //foreach (var item in query)
+            //{
+            //    Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            //}
 
-            var a = Cars1.Where(x => x.Tootja.Contains("o")).ToList();
-            var b = Cars1.Where(x => x.Tootja.Contains("e")).ToList();
-            var c = Cars1.Where(x => x.Mudel.Length > 4).ToList();
-            var d = Cars1.Where(x => x.KW >= 150).ToList();
-            var e = Cars1.Where(x => x.KW <= 50).ToList();
+            //var a = Cars1.Where(x => x.Tootja.Contains("o")).ToList();
+            //var b = Cars1.Where(x => x.Tootja.Contains("e")).ToList();
+            //var c = Cars1.Where(x => x.Mudel.Length > 4).ToList();
+            //var d = Cars1.Where(x => x.KW >= 150).ToList();
+            //var e = Cars1.Where(x => x.KW <= 50).ToList();
 
-            Console.WriteLine("\n'o' tootja nimes: ");
-            foreach (var item in a)
-            {
-                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
-            }
+            //Console.WriteLine("\n'o' tootja nimes: ");
+            //foreach (var item in a)
+            //{
+            //    Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            //}
 
-            Console.WriteLine("\n'e' tootja nimes: ");
-            foreach (var item in b)
-            {
-                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
-            }
+            //Console.WriteLine("\n'e' tootja nimes: ");
+            //foreach (var item in b)
+            //{
+            //    Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            //}
 
-            Console.WriteLine("\nMudel koosneb rohkem kui 4 tähest: ");
-            foreach (var item in c)
-            {
-                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
-            }
+            //Console.WriteLine("\nMudel koosneb rohkem kui 4 tähest: ");
+            //foreach (var item in c)
+            //{
+            //    Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            //}
 
-            Console.WriteLine("\nVõimsaim auto: ");
-            foreach (var item in d)
-            {
-                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
-            }
+            //Console.WriteLine("\nVõimsaim auto: ");
+            //foreach (var item in d)
+            //{
+            //    Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            //}
 
-            Console.WriteLine("\nNõrgeim auto: ");
-            foreach (var item in e)
-            {
-                Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
-            }
+            //Console.WriteLine("\nNõrgeim auto: ");
+            //foreach (var item in e)
+            //{
+            //    Console.WriteLine(item.Tootja + " | " + item.Mudel + " | " + item.KW + "KW | " + item.Värv);
+            //}
 
             #endregion
 
+            #region Grupeerimine
 
+            var humans1 = new List<Human>
+            {
+                new Human(){Name = "Kalle", Age = 21},
+                new Human(){Name = "Malle", Age = 40},
+                new Human(){Name = "Mari", Age = 28},
+                new Human(){Name = "Elmar", Age = 40},
+                new Human(){Name = "Juku", Age = 10}
+            };
+
+            int[] numbers = new int[8] { 0, 1, 2, 3, 4, 5, 6, 5};
+
+            var grupid = from human in humans1
+                         group human by human.Age into NewGroup
+                         select NewGroup;
+
+            //var grupid = (from number in numbers
+            //             group number by number == 5);
+
+            foreach (var grupp in grupid)
+            {
+                Console.WriteLine("Uus grupp: " + grupp.Key);
+                foreach (var item in grupp)
+                {
+                    Console.WriteLine(item.Age + " " + item.Name);
+                }
+            }
+
+            #endregion
 
 
 
